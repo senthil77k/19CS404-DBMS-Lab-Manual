@@ -38,123 +38,163 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/1165e6ca-2d49-41ef-8cd1-a2061b5fef2e)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY > 4500;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/12dcc0a1-d671-4eb8-afe8-6bbd09ed688d)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/0223399a-4922-41ab-b72e-fb0285c6d2f5)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT name
+FROM customer
+WHERE phone IN (
+    SELECT phone
+    FROM customer
+    GROUP BY phone
+    HAVING COUNT(*) = 1
+);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/c32f9b69-c4ee-4904-bb33-a5122fc12200)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/5ed2ffc7-fb7c-48ee-b9d9-badb1da0cd4d)
 
 ```sql
--- Paste your SQL code below for Question 3
+
+SELECT grade, COUNT(*)
+FROM customer where grade > (SELECT AVG(grade) FROM customer WHERE city = 'New York')
+GROUP BY grade;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/514e626b-d8a0-4e4d-872f-b72ed53408ac)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/19e9b00d-58e3-48be-9fec-71f01570922b)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT ord_no, purch_amt, ord_date, s.salesman_id
+FROM orders
+JOIN salesman s ON orders.salesman_id = s.salesman_id
+WHERE s.commission = (
+    SELECT MAX(commission)
+    FROM salesman
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/c758ada8-76b8-497c-8d3f-80ec6f96436a)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/4adc7758-ab6d-4992-9651-fa6f3c6c8717)
 
 ```sql
--- Paste your SQL code below for Question 5
+select * from customers where Address= "Delhi" and AGE <30 Order by ID;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/844d7884-a8d9-4a00-88af-aebaf3d7540d)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/5cd8edc7-44e3-45b4-b5ef-abe1f4fa9b4c)
 
 ```sql
--- Paste your SQL code below for Question 6
+select * from CUSTOMERS where salary < 2500;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/8fe56024-791b-4878-8444-870ac2ff0320)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/1a0aee2a-92bf-4ceb-95fc-30236923af12)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT *
+FROM customer
+WHERE customer_id = (
+    SELECT salesman_id - 2001
+    FROM salesman
+    WHERE name = 'Mc Lyon'
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/3e82ec14-696f-4dd7-b8fd-77dc38494967)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/4a5d146b-59d6-4cd6-9aa4-9972c5af621d)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT * FROM Employee
+WHERE age < (
+    SELECT AVG(age)
+    FROM Employee
+    WHERE income > 250000
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/57af9f69-6c7a-4db9-bd91-ba4efcdc96e9)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/41d01b5b-cef4-423f-af93-11f22d090cf5)
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT department_id, department_name
+FROM Departments
+WHERE LENGTH(department_name) > (
+    SELECT AVG(LENGTH(department_name))
+    FROM Departments
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/8a96449a-21de-49b8-bfd1-af125e120e83)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/987464c8-4528-4a61-8f48-5d95f859e72f)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT * 
+FROM Employee
+WHERE age < (
+    SELECT AVG(age) 
+    FROM Employee 
+    WHERE income > 1000000
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/0eccc763-d792-4c2a-9ac7-f2c5cde8fff4)
 
 
 ## RESULT
