@@ -38,123 +38,168 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/e91852a3-331c-480f-842f-e6ee392c646e)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT PatientID, COUNT(*) AS AvgMedications
+FROM MedicalRecords
+GROUP BY PatientID;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/49e9e08a-df9b-42b0-970f-37cf15096e50)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/25becd1a-d009-4965-a2fa-d1e254d7a4c9)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT Medication, 
+    CASE 
+        WHEN Dosage GLOB '*[0-9]*' THEN CAST(
+            SUBSTR(Dosage, 1, INSTR(Dosage, ' ') - 1) AS REAL
+        )
+        ELSE 0.0
+    END AS AvgDosage
+FROM Prescriptions
+GROUP BY Medication;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/f1ea69f5-a136-4030-b1ab-5d6ed7fbdff3)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/e60cca01-79e0-40e2-8a21-96645ce6070f)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT 
+    Gender, 
+    COUNT(*) AS TotalPatients
+FROM 
+    Patients
+GROUP BY 
+    Gender;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/3cf739ae-6d2f-4d70-bb1c-5835ec823479)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/7370db73-3d6b-418e-afcd-10f00165a2a2)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT 
+    name AS Employee_Name, 
+    age AS Age
+FROM 
+    employee
+ORDER BY 
+    age ASC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/96727dc1-7aad-407b-95e3-4a4536ce0121)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/6c67202a-6402-48ea-bb7e-2dc76779333b)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT 
+    name AS fruit_name, 
+    inventory AS lowest_quantity
+FROM 
+    fruits
+WHERE 
+    inventory = (SELECT MIN(inventory) FROM fruits);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/1b77f683-0489-4cdc-a0c7-ae221de84b0f)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/c5611e21-a388-4c57-9e11-dd4594f80dbd)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT COUNT(*) AS employees_in_california
+FROM employee
+WHERE city = 'California';
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/1dceb46c-f5c8-4600-b659-5db9aeb1db81)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/6e00bc9a-9993-4cc8-9a71-01e3fb9b0321)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT name, email, LENGTH(email) AS min_email_length
+FROM customer
+ORDER BY LENGTH(email) ASC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/6e34396b-4c04-4585-8598-5e898e06b4da)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/6dad107c-31c5-4153-9eb8-5224e7862938)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT jdate, AVG(workhour) AS "AVG(workhour)"
+FROM employee1
+GROUP BY jdate
+HAVING AVG(workhour) < 10
+ORDER BY AVG(workhour) DESC
+LIMIT 2;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/c8300973-a425-4be1-b033-3519e99d3d3f)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/9bc60292-68b8-4ab0-9ca9-3e4c5edca6d5)
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT city, AVG(income) AS "AVG(income)"
+FROM employee
+GROUP BY city
+HAVING AVG(income) > 500000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/d83a337e-8fb3-4c52-bec9-87b723bb2450)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/0e540bc7-9c5c-4de1-9555-859999fb0dc4)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT age, SUM(income) AS "SUM(income)"
+FROM employee
+GROUP BY age
+HAVING SUM(income) > 1000000;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/611c9537-4c75-4e57-9f06-e5883d708307)
 
 
 ## RESULT
