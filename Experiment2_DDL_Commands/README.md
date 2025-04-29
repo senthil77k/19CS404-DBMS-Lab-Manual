@@ -104,124 +104,136 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/72c52af7-8a89-4d86-ab27-9f764550a2e7)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+alter table Student_details add column State TEXT;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/6813569b-f42f-491f-8215-7272a3f40e62)
 
 **Question 2**
 ---
--- Paste Question 2 here
+--![image](https://github.com/user-attachments/assets/c9766ce2-4307-4c63-85c7-1484e6802bd4)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+create table Orders(OrderID INTEGER primary key,OrderDate DATE NOT NULL, CustomerID INTEGER, FOREIGN
+KEY (CustomerID) references Customers(CustomerID));
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/742d5840-0a59-4ab9-ad0f-8611ce5d2b12)
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- ![image](https://github.com/user-attachments/assets/e218fa2a-8a4b-4b06-98e0-78c4b3654281)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE table jobs(job_id int primary key,job_title varchar(50) default ' ',min_salary int default 8000 ,max_salary int NULL);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/4274c9dd-2d2f-4438-9c29-2571076eecf1)
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- ![image](https://github.com/user-attachments/assets/028d15be-2fa5-4e96-8424-2adae73bf337)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+insert into Customers values(1, 'Ramesh',32,'Ahmedabad',2000);
+insert into Customers values(2, 'Khilan',25,'Delhi',1500);
+insert into Customers values(3, 'Kaushik',23,'Kota',2000);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/81fa8d68-46e5-452d-916f-330feb75cdbf)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/3972652f-4cb5-4391-9a40-b911b1ed4243)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE table Reviews(ReviewID INTEGER,ProductID INTEGER,Rating REAL, ReviewText TEXT);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/de3f2e2d-d9e0-4e68-9765-6f7386c6358b)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/544d5cec-664a-4b00-9a6d-afcc7080c2a9)
 
 ```sql
--- Paste your SQL code below for Question 6
+alter table Student_details add column MobileNumber NUMBER;
+alter table Student_details add column Address VARCHAR(100);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/f842c7cd-f349-40af-89d5-19f7e4dd78b4)
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- ![image](https://github.com/user-attachments/assets/edbd93e5-c709-4959-a57d-e73f8764ce0b)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+-- insert into Student_details values(201,'David Lee','M','Physics',92);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/a93aff9e-bd3b-4517-bd8d-134728b6ae14)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/7196d6dd-6c64-4338-b500-7b7076bf1a8a)
 
 ```sql
--- Paste your SQL code below for Question 8
+create table Attendance(AttendanceID INTEGER primary key,EmployeeID INTEGER,AttendanceDate DATE,
+Status TEXT CHECK(Status in('Present','Absent','Leave')),FOREIGN KEY (EmployeeID) references Employees(EmployeeID)  );
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/1e57c247-a9bf-4f6f-b0c9-1707e02bae30)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/b3a5e9ec-1456-4465-9eb8-07c2487683bb)
 
 ```sql
--- Paste your SQL code below for Question 9
+-- insert into Books select * from Out_of_print_books;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/d842d0d1-162e-483d-9b4f-0037bf51808d)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/1eccca95-51c5-4a70-8f02-001f5b4fc603)
 
 ```sql
--- Paste your SQL code below for Question 10
+create table ProjectAssignments(AssignmentID INTEGER primary key,EmployeeID INTEGER, ProjectID INTEGER,AssignmentDate DATE NOT NULL,
+FOREIGN KEY (EmployeeID) references Employees(EmployeeID),
+FOREIGN KEY (ProjectID) references Projects(ProjectID));
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/1a4e253c-1726-451a-bac0-a5d27842c99e)
 
 
 ## RESULT
