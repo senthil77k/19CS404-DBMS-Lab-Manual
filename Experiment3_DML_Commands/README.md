@@ -47,123 +47,146 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+-- ![image](https://github.com/user-attachments/assets/d3ae6f94-0338-4939-9d49-c95c3e302d1e)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE Customer
+SET grade = 5
+WHERE city = 'Chennai';
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/cd0c3406-c5bc-471b-b5d5-b3477b2dbe35)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/122ca041-f9f5-4db9-8671-33959b10dc3a)
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE Products
+SET quantity = quantity * 1.10;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/45542c91-ee45-4e84-bb35-ca5cec13bdaf)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/dc329747-819b-4ba8-9868-dfa6af9da2b1)
 
 ```sql
--- Paste your SQL code below for Question 3
+-- UPDATE Products
+SET category = 'Household'
+WHERE product_name LIKE '%Detergent%';
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/7b519a7c-fe01-4ef7-9f64-9853e108899e)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/84d55697-91c5-49a8-86af-c4502d26073a)
 
 ```sql
--- Paste your SQL code below for Question 4
+-- UPDATE suppliers
+SET supplier_name = UPPER(supplier_name)
+WHERE contact_person LIKE '% Singh';
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/543b9b65-352d-429a-b7c0-17cbfa15054b)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/43c51949-f3f5-4604-802a-fc3b037b7723)
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE sales
+SET sell_price = sell_price * 1.05
+WHERE product_id = 15 AND sale_date = '2023-01-31';
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/911d7e54-53d9-41e7-a184-7ba44c539ba0)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/2fa49e84-80d7-4c0b-898e-002fa556bc43)
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Customer
+WHERE GRADE = 3
+  AND CUST_NAME LIKE '%BBB%'
+  AND PAYMENT_AMT > 2000;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/71d64dd6-170f-4b7b-b9bc-666ebdddd501)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/a7806300-af05-4bd7-8ce7-fb8d4758720c)
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Customer
+WHERE CUST_COUNTRY = 'UK'
+  AND WORKING_AREA = 'London'
+  AND GRADE < 3;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/506be834-a24e-46d2-920e-923c2bfbb161)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/a549d7d5-6216-4e67-81c3-e08607bc4d18)
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM Customer
+WHERE LENGTH(CUST_NAME) = 6;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/7bcf1616-2d29-4a73-a825-20e94f98f9a8)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/1de12681-2c3d-4805-95de-cf2b575af5fa)
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Customer
+WHERE GRADE % 2 = 1;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/185849a8-5b74-42e7-937c-3b029e2f3b4d)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/9a1beadd-c792-45e3-babf-63b84be7b88c)
 
 ```sql
--- Paste your SQL code below for Question 10
+DELETE FROM surgeries
+WHERE surgery_date = '2024-02-28';
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/ad587c27-eaa0-42ef-ab55-a7cb904ec2f9)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
