@@ -45,28 +45,101 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission
+Student Name : BALA B
+Reg No : 212224100005
+
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University 
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image](https://github.com/user-attachments/assets/992b0d22-455c-41ab-b92d-70db82e8d623)
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+- Student
+
+Attributes: Student_ID, Name, Email, Phone_No, DOB
+
+- Program
+
+Attributes: Program_ID, Program_Name, Department
+
+- Course
+
+Attributes: Course_ID, Course_Name, Credits
+
+- Prerequisite
+
+Attributes: Course_ID (used to identify prerequisite course)
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
+- Enroll
+
+Between: Student and Course
+
+Cardinality: Many-to-Many (M:N) — a student can enroll in many courses, and each course can have many students.
+
+Participation: Partial (not all students may be enrolled in all courses)
+
+- Belongs_To
+
+Between: Student and Program
+
+Cardinality: Many-to-One (M:1) — many students belong to one program.
+
+Participation: Total — every student belongs to a program.
+
+- Has
+
+Between: Program and Course
+
+Cardinality: One-to-Many (1:M) — one program offers many courses.
+
+Participation: Total — each course must belong to some program.
+
+- Can Have
+
+Between: Course and Prerequisite
+
+Cardinality: Many-to-Many (M:N) — a course can have multiple prerequisites, and a prerequisite can apply to multiple courses.
+
+Participation: Optional — not all courses need prerequisites.
 ...
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+- Prerequisite Modeling:
+
+Represented using a separate entity Prerequisite linked with a relationship Can Have.
+
+It handles many-to-many prerequisites by associating Course_ID with a Prerequisite Course.
+
+This design is flexible and supports the reuse of courses as prerequisites for multiple other courses.
+
+- Billing:
+
+Not included in the given ER diagram. If required, could be added as a separate entity (e.g., Billing with attributes like Amount, Due_Date, etc.) linked to Student.
+
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+- Entity Selection:
 
-## RESULT
+Chose core entities relevant to an academic environment: Student, Course, Program, and Prerequisite.
+
+- Attribute Placement:
+
+Student details (contact, ID, DOB) are grouped with Student.
+
+Program-specific info like department remains with Program.
+
+- Normalization:
+
+Avoided data duplication by using separate entities for Program and Prerequisite.
+
+- Relationships Reflect Real World:
+
+Many-to-many relationships like Enroll and Can Have accurately model how students take multiple courses and courses have multiple prerequisites.
+
+## RESULT:
+The ER diagram successfully models the University by clearly representing entities, their attributes, and real-life relationships for efficient data management.
